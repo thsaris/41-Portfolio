@@ -1,4 +1,6 @@
 // IMPORT
+import { hobbies } from '../components/hobbies/hobbies.js';
+import { hobbiesData } from '../data/hobbiesData.js';
 
 // EXECUTION
 
@@ -7,6 +9,10 @@
 
 /* about start */
 /* about end */
+
+/* hobbies start */
+hobbies(hobbiesData);
+/* hobbies end */
 
 /* services start */
 /* services end */
