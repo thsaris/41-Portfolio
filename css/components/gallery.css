@@ -1,0 +1,92 @@
+.gallery {
+    display: grid;
+    gap: 30px;
+}
+
+.gallery > .filter {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery > .filter > .option {
+    padding: 0.6em 1em;
+    font-size: 14px;
+    line-height: 1em;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.gallery > .filter > .option.active,
+.gallery > .filter > .option:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.gallery > .content {
+    display: grid;
+    gap: 20px;
+}
+.gallery > .content > .item {
+    --fs: 10px;
+    width: 100%;
+    height: 330px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.gallery .item > .visual {
+    width: 100%;
+    font-size: inherit;
+    height: calc(330px - var(--fs) * 8.5);
+}
+.gallery .visual > .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.gallery .visual > .hover-layer {
+    display: none;
+}
+.gallery .hover-layer > .icon {
+}
+.gallery .item > .description {
+    width: 100%;
+    font-size: inherit;
+    padding: calc(var(--fs) * 2);
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.gallery .description > .title {
+    font-size: inherit;
+    font-size: calc(var(--fs) * 2);
+    line-height: calc(var(--fs) * 2);
+}
+.gallery .description > .tag {
+    font-size: inherit;
+    font-size: calc(var(--fs) * 1.5);
+    margin-top: calc(var(--fs));
+    line-height: calc(var(--fs) * 1.5);
+}
+.gallery .description > .btn {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .gallery > .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .gallery > .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
