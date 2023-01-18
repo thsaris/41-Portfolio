@@ -38,22 +38,51 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    transition: all 0.3s;
 }
+
+.gallery > .content > .item.hidden {
+    display: none;
+}
+
 .gallery .item > .visual {
     width: 100%;
     font-size: inherit;
     height: calc(330px - var(--fs) * 8.5);
+    position: relative;
 }
 .gallery .visual > .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: all 0.3s;
 }
 .gallery .visual > .hover-layer {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: #0005;
+    transition: all 0.3s;
 }
-.gallery .hover-layer > .icon {
+.gallery .item .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 18px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
 }
 .gallery .item > .description {
     width: 100%;
@@ -77,6 +106,24 @@
 }
 .gallery .description > .btn {
     display: none;
+}
+.gallery > .content > .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px #0003;
+}
+.gallery .item:hover .img {
+    transform: rotate(5deg) scale(1.15);
+}
+.gallery .item:hover .hover-layer {
+    opacity: 1;
+}
+.gallery .item:hover .icon {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.gallery .item .icon:hover {
+    background-color: #fff;
+    color: var(--main-color);
 }
 
 @media (min-width: 768px) {
