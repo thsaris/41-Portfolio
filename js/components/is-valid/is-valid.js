@@ -31,6 +31,10 @@ class IsValid {
         return true;
     }
 
+    static nonEmptyString(str) {
+        return typeof str === 'string' && str !== '';
+    }
+
     static icon(str) {
         const maxSize = 12;
         if (!IsValid.stringSizeInRange(str, maxSize)) {
