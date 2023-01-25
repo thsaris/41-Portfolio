@@ -1,7 +1,8 @@
 // IMPORT
+import { Gallery } from '../components/gallery/Gallery.js';
+import { portfolioData } from '../data/portfolioData.js';
 import { tiles } from '../components/tiles/tiles.js';
 import { hobbiesData } from '../data/hobbiesData.js';
-import { servicesData } from '../data/servicesData.js';
 
 // EXECUTION
 
@@ -16,8 +17,11 @@ tiles('hobbies_block', hobbiesData);
 /* hobbies end */
 
 /* services start */
-// tiles('services_block', servicesData);
 /* services end */
+
+/* portfolio start */
+new Gallery('#portfolio_block', portfolioData);
+/* portfolio end */
 
 /* footer start */
 /* footer end */
